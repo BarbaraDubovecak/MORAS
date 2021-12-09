@@ -1,0 +1,82 @@
+CHIP Mult
+{
+	IN a[16], b[16];
+	OUT out[16];
+	
+	PARTS:
+	
+	And161(a = a, b = b[0], out = r0);
+	And161(a = a, b = b[1], out = o1);
+	And161(a = a, b = b[2], out = o2);
+	And161(a = a, b = b[3], out = o3);
+	And161(a = a, b = b[4], out = o4);
+	And161(a = a, b = b[5], out = o5);
+	And161(a = a, b = b[6], out = o6);
+	And161(a = a, b = b[7], out = o7);
+	And161(a = a, b = b[8], out = o8);
+	And161(a = a, b = b[9], out = o9);
+	And161(a = a, b = b[10], out = o10);
+	And161(a = a, b = b[11], out = o11);
+	And161(a = a, b = b[12], out = o12);
+	And161(a = a, b = b[13], out = o13);
+	And161(a = a, b = b[14], out = o14);
+	And161(a = a, b = b[15], out = o15);
+	
+	
+	
+	BitShiftL(in = o1, out = r1);
+	
+	
+	BitShiftL(in = o2, out = a2);
+	BitShiftL(in = a2, out = r2);
+	
+	
+	BitShiftL(in = o3, out = a3);
+	BitShiftL(in = a3, out = b3);
+	BitShiftL(in = b3, out = r3);
+	
+	
+	BitShiftL(in = o4, out = a4);
+	BitShiftL(in = a4, out = b4);
+	BitShiftL(in = b4, out = c4);
+	BitShiftL(in = c5, out = r4);
+	
+	
+	
+	BitShiftL(in = o5, out = a5);
+	BitShiftL(in = a5, out = b5);
+	BitShiftL(in = b5, out = c5);
+	BitShiftL(in = c5, out = d5);
+	BitShiftL(in = d5, out = r5);
+	
+	BitShiftL6(in = o6, out = r6);
+	BitShiftL7(in = o7, out = r7);
+	BitShiftL8(in = o8, out = r8);
+	BitShiftL9(in = o9, out = r9);
+	BitShiftL10(in = o10, out = r10);
+	BitShiftL11(in = o11, out = r11);
+	BitShiftL12(in = o12, out = r12);
+	BitShiftL13(in = o13, out = r13);
+	BitShiftL14(in = o14, out = r14);
+	BitShiftL15(in = o15, out = r15);
+	
+	
+	Add16(a = r0, b = r1, out = p1);
+	Add16(a = p1, b = r2, out = p2);
+	Add16(a = p2, b = r3, out = p3);
+	Add16(a = p3, b = r4, out = p4);
+	Add16(a = p4, b = r5, out = p5);
+	Add16(a = p5, b = r6, out = p6);
+	Add16(a = p6, b = r7, out = p7);
+	Add16(a = p7, b = r8, out = p8);
+	Add16(a = p8, b = r9, out = p9);
+	Add16(a = p9, b = r10, out = p10);
+	Add16(a = p10, b = r11, out = p11);
+	Add16(a = p11, b = r12, out = p12);
+	Add16(a = p12, b = r13, out = p13);
+	Add16(a = p13, b = r14, out = p14);
+	Add16(a = p14, b = r15, out = out);
+	
+	
+	
+}

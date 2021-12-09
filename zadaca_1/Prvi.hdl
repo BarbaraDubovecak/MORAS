@@ -1,0 +1,14 @@
+CHIP Prvi {
+
+	IN x, y, z;
+	OUT out;
+	
+	PARTS:
+	
+	Not(a = x, out = nx);
+	Not(b = y, out = ny);
+	Or(a = nx, b = ny, out = out);
+
+
+
+}
